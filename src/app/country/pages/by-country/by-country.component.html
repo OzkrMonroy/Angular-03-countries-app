@@ -2,15 +2,7 @@
 <hr />
 <div class="row">
   <div class="col">
-    <form autocomplete="off" (ngSubmit)="onSearch()">
-      <input
-        type="text"
-        name="searchWord"
-        class="form-control"
-        placeholder="Search country..."
-        [(ngModel)]="searchWord"
-      />
-    </form>
+    <app-country-input (onEnter)="search($event)" (onDebounce)="displaySuggestions($event)"></app-country-input>
   </div>
 </div>
 <hr />

@@ -9,29 +9,31 @@ import { CountryService } from '../../services/country.service';
   ]
 })
 export class ByCountryComponent{
-  searchWord: string = '';
   errorMessage: string = '';
   error: boolean = false;
   countries: Country[] = [];
+  searchWord: string = '';
 
   constructor(private countryService: CountryService) { }
 
-  onSearch() {
-    console.log(this.searchWord);
-    this.countryService.getCountryByName(this.searchWord).subscribe({
+  search(searchWord: string) {
+    this.searchWord = searchWord;
+    this.countryService.getCountryByName(searchWord).subscribe({
       next: (countries) => {
         this.error = false;
-        console.log(countries);
         this.countries = countries;
       },
       error: (err) => {
-        console.log(err);
-        
         this.errorMessage = err.error.message;
         this.error = true;
         this.countries = [];
       }
     });
+  }
+
+  displaySuggestions(event: string) {
+    this.error = false;
+    this.errorMessage = '';
   }
 
 }
