@@ -1,1 +1,29 @@
-<p>sidebar works!</p>
+<h2>Search</h2>
+    <hr />
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        router
+      >
+        By country name
+      </li>
+      <li
+        class="list-group-item"
+        routerLink="region"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        By region
+      </li>
+      <li
+        class="list-group-item"
+        routerLink="capital"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        By capital
+      </li>
+    </ul>
