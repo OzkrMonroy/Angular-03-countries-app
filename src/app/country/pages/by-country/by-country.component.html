@@ -1,1 +1,22 @@
-<p>by-country works!</p>
+<h3>By country</h3>
+<hr />
+<div class="row">
+  <div class="col">
+    <form autocomplete="off" (ngSubmit)="onSearch()">
+      <input
+        type="text"
+        name="searchWord"
+        class="form-control"
+        placeholder="Search country..."
+        [(ngModel)]="searchWord"
+      />
+    </form>
+  </div>
+</div>
+<hr />
+<div class="alert alert-danger" *ngIf="error">Nothing found for <span class='fw-bold'>{{searchWord}}</span></div>
+<div class="row" *ngIf="!error && countries.length > 0">
+  <div class="col">
+    <app-country-table [countries]="countries"></app-country-table>
+  </div>
+</div>
