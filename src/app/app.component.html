@@ -1,1 +1,36 @@
-<h1>Hello world</h1>
+<div class="row container mt-4">
+  <div class="col-3">
+    <h2>Search</h2>
+    <hr />
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        router
+      >
+        Search country
+      </li>
+      <li
+        class="list-group-item"
+        routerLink="region"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        By region
+      </li>
+      <li
+        class="list-group-item"
+        routerLink="capital"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        By capital
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>
