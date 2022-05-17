@@ -18,7 +18,7 @@ export class ByCountryComponent{
 
   search(searchWord: string) {
     this.searchWord = searchWord;
-    this.countryService.getCountries(searchWord, 'name').subscribe({
+    this.countryService.getCountries(searchWord, 'name', ['name','flags','capital','population','cca2']).subscribe({
       next: (countries) => {
         this.error = false;
         this.countries = countries;

@@ -21,7 +21,7 @@ export class ByRegionComponent{
     
     this.selectedRegion = region;
     this.countries = [];
-    this.countryService.getCountries(region, 'region').subscribe({
+    this.countryService.getCountries(region, 'region', ['name','flags','capital','population','cca2']).subscribe({
       next: (countries: Country[]) => {
         this.error = false;
         this.countries = countries;
