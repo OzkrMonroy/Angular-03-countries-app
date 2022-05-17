@@ -6,7 +6,7 @@
   </div>
 </div>
 <hr />
-<div class="alert alert-danger" *ngIf="error">Nothing found for <span class='fw-bold'>{{searchWord}}</span></div>
+<app-country-alert [error]="error" [searchWord]="searchWord"></app-country-alert>
 <div class="row" *ngIf="!error && countries.length > 0">
   <div class="col">
     <app-country-table [countries]="countries"></app-country-table>

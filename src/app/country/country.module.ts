@@ -9,6 +9,7 @@ import { SeeCountryDetailsComponent } from './pages/see-country-details/see-coun
 import { RouterModule } from '@angular/router';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { CountryInputComponent } from './components/country-input/country-input.component';
+import { CountryAlertComponent } from './components/country-alert/country-alert.component';
 
 
 
@@ -19,7 +20,8 @@ import { CountryInputComponent } from './components/country-input/country-input.
     ByRegionComponent,
     SeeCountryDetailsComponent,
     CountryTableComponent,
-    CountryInputComponent
+    CountryInputComponent,
+    CountryAlertComponent
   ],
   exports: [
     ByCapitalComponent,
