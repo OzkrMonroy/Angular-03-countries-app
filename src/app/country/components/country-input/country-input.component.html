@@ -3,7 +3,7 @@
     type="text"
     name="searchWord"
     class="form-control"
-    placeholder="Search country..."
+    [placeholder]="placeholder"
     [(ngModel)]="searchWord"
     (input)="keyPressed()"
   />

@@ -10,17 +10,16 @@ export class CountryService {
   private baseUrl: string = 'https://restcountries.com/v3.1';
   constructor(private http: HttpClient) { }
 
-  //TODO: set the interface later
-  getCountryByName(name: string): Observable<Country[]> {
-    const url: string = `${this.baseUrl}/name/${name}`;
+  getCountries(name: string, option: string = 'name'): Observable<Country[]> {
+    const url: string = `${this.baseUrl}/${option}/${name}`;
     return this.http.get<Country[]>(url);
   }
-  getCountriesByRegion(region: string): Observable<any> {
-    const url: string = `${this.baseUrl}/region/${region}`;
-    return this.http.get(url);
-  }
-  getCountriesByCapital(capital: string): Observable<any> {
-    const url: string = `${this.baseUrl}/capital/${capital}`;
-    return this.http.get(url);
-  }
+  // getCountriesByRegion(region: string): Observable<any> {
+  //   const url: string = `${this.baseUrl}/region/${region}`;
+  //   return this.http.get(url);
+  // }
+  // getCountriesByCapital(capital: string): Observable<any> {
+  //   const url: string = `${this.baseUrl}/capital/${capital}`;
+  //   return this.http.get(url);
+  // }
 }

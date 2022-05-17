@@ -14,5 +14,5 @@ export class CountryTableComponent implements OnInit {
   }
 
   @Input() countries: Country[] = [];
-
+  @Input() showCapital: boolean = false;
 }

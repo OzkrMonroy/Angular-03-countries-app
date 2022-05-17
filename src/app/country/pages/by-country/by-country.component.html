@@ -2,11 +2,18 @@
 <hr />
 <div class="row">
   <div class="col">
-    <app-country-input (onEnter)="search($event)" (onDebounce)="displaySuggestions($event)"></app-country-input>
+    <app-country-input
+      (onEnter)="search($event)"
+      (onDebounce)="displaySuggestions($event)"
+      placeholder="Search country..."
+    ></app-country-input>
   </div>
 </div>
 <hr />
-<app-country-alert [error]="error" [searchWord]="searchWord"></app-country-alert>
+<app-country-alert
+  [error]="error"
+  [searchWord]="searchWord"
+></app-country-alert>
 <div class="row" *ngIf="!error && countries.length > 0">
   <div class="col">
     <app-country-table [countries]="countries"></app-country-table>
